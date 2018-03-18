@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <h4 class="modal-title">Create Task</h4>
+    <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <div>
+        Task Objective :
+        <input type="text" [(ngModel)]="newTask.objective" placeholder="name"/>
+          Date :
+        <input type="date" [(ngModel)]="newTask.date" />
+          Start Time :
+        <input type="time" [(ngModel)]="newTask.start_time" />
+          End Time :
+        <input type="time" [(ngModel)]="newTask.end_time" />
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="closeModal()">Close</button>
+  </div>

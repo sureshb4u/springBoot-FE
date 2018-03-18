@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+body,html{
+    overflow: hidden;
+}
+.navbar{
+    margin-bottom: 0px !important;
+}
+.h100p{height: 100%;}
+.pt10{padding-top: 10px;}
+.mt10{margin-top: 10px;}

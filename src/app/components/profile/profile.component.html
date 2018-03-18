@@ -1,0 +1,65 @@
+<nav  class="navbar navbar-inverse">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li class="active"  ><a>Home</a></li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-log-in" (click)="logOut()"></span> LogOut</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+<ng-template #createModal let-c="close" let-d="dismiss">
+    <app-create-task></app-create-task>
+</ng-template>
+  
+  <!-- Jumbotron Header -->
+    <div class="row h100p">
+      <div class="col-sm-2 user-detail">user detail</div>
+      <div class="col-sm-10">
+          <div class="row mt10">
+              <div class="col-sm-8">
+                  <div ngbDropdown class="d-inline-block" #myDrop="ngbDropdown">
+                      <button #statusBtn class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Select Status</button>
+                      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button type="button" class="dropdown-item" (click)="setStatus('New');">New</button>
+                        <button type="button" class="dropdown-item" (click)="setStatus('Started')">Started</button>
+                        <button type="button" class="dropdown-item" (click)="setStatus('Completed')">Completed</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-2">
+                <button class="btn btn-block btn-create" type="button" (click)="openModal(createModal)">Create New</button>
+              </div>
+          </div>
+          <table class="task-list mt10">
+                <thead class="taskListHeader"> 
+                  <th>S.NO</th>
+                  <th>Objective</th>
+                  <th>Date</th>
+                  <th>Start Time</th>
+                  <th>End Time</th>
+                  <th>Status</th>
+                </thead>
+                <tbody *ngIf="taskList.length > 0">
+                <tr  *ngFor="let task of taskList index as sNo" class="taskList">
+                  <td>{{sNo+1}}</td>
+                  <td>{{task.objective}}</td>
+                  <td>{{task.date}}</td>
+                  <td>{{task.start_time}}</td>
+                  <td>{{task.end_time}}</td>
+                  <td>{{task.status}}</td>
+                </tr>
+                </tbody>
+                <div *ngIf="taskList.length == 0"> Huraay!! No Task Found.. </div>
+          </table>
+      </div>
+    </div>
+</div>
+
+
+
+
+
