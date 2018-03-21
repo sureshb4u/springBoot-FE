@@ -1,7 +1,5 @@
 export class User {
-  id : string;
+  grant_type : string;
   username: string="";
   password: string="";
-  fullName: string="";
-
 }
