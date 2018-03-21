@@ -21,13 +21,14 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.router.navigate(['/profile']);
-    // this.authService.logIn(this.user)
-    //   .subscribe(data=>{
-    //     this.router.navigate(['/profile']);
-    //     },err=>{
-    //     this.errorMessage="error :  Username or password is incorrect";
-    //     }
-    //   )
+    //this.router.navigate(['/profile']);
+    this.user.grant_type = "password";
+     this.authService.logIn(this.user)
+       .subscribe(data=>{
+         this.router.navigate(['/profile']);
+         },err=>{
+         this.errorMessage="error :  Username or password is incorrect";
+         }
+       )
   }
 }
