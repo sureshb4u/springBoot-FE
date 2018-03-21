@@ -17,6 +17,7 @@ import {UrlPermission} from "./urlPermission/url.permission";
 import { ProfileService } from './services/profile.service.service';
 import { NewTaskService } from './services/new-task.service';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
+import { HttpClient } from './services/interceptor.service';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { CreateTaskComponent } from './components/create-task/create-task.compon
   imports: [
     BrowserModule,HttpModule,FormsModule,routing, FacebookModule.forRoot(),NgbModule.forRoot(),
   ],
-  providers: [AuthService,AccountService,UrlPermission, ProfileService, NewTaskService],
+  providers: [AuthService,AccountService,UrlPermission, ProfileService, NewTaskService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
